@@ -1,0 +1,1 @@
+package com.firstclub.events; public class MembershipUpgradedEvent {}

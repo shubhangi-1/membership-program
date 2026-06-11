@@ -1,0 +1,1 @@
+package com.firstclub.exception; public class GlobalExceptionHandler {}

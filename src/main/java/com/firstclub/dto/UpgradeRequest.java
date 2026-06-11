@@ -1,0 +1,1 @@
+package com.firstclub.dto; public class UpgradeRequest {}

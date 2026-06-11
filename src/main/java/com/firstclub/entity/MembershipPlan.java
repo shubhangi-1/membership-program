@@ -1,0 +1,1 @@
+package com.firstclub.entity; public class MembershipPlan {}
