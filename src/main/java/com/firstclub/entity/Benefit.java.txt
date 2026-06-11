@@ -1,0 +1,33 @@
+package com.firstclub.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "benefits")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Benefit {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String benefitName;
+
+    @Enumerated(EnumType.STRING)
+    private BenefitType benefitType;
+
+    /*
+      Example:
+      10 = 10% discount
+      0 = Free Delivery
+      20 = Coupon Value
+    */
+    private Double value;
+
+    private String description;
+}

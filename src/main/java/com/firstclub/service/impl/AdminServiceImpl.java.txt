@@ -1,0 +1,24 @@
+package com.firstclub.service.impl;
+
+import com.firstclub.service.AdminService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class AdminServiceImpl implements AdminService {
+
+    private final MembershipPlanRepository planRepository;
+    private final MembershipTierRepository tierRepository;
+    private final SubscriptionRepository subscriptionRepository;
+
+    @Override
+    public MembershipPlan createPlan(CreatePlanRequest request) {
+        // implementation
+    }
+
+    @Override
+    public MembershipTier createTier(CreateTierRequest request) {
+        // implementation
+    }
+}

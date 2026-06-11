@@ -1,0 +1,28 @@
+public interface AdminService {
+
+    MembershipPlan createPlan(CreatePlanRequest request);
+
+    Page<MembershipPlan> getAllPlans(int page, int size);
+
+    MembershipTier createTier(CreateTierRequest request);
+
+    Page<MembershipTier> getAllTiers(int page, int size);
+
+    MembershipTier updateTier(
+            Long tierId,
+            CreateTierRequest request);
+
+    void deleteTier(Long tierId);
+
+    Page<SubscriptionResponse> getSubscriptions(
+            int page,
+            int size);
+
+    SubscriptionResponse forceUpgrade(
+            Long userId,
+            String tier);
+
+    void cancelMembership(Long userId);
+
+    MembershipAnalyticsResponse getAnalytics();
+}

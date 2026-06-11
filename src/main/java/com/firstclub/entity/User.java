@@ -1,1 +1,30 @@
-package com.firstclub.entity; public class User {}
+package com.firstclub.entity; 
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "users")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    @Column(unique = true)
+    private String email;
+
+    private String cohort;
+
+    // Used for automatic tier evaluation
+    private Integer monthlyOrderCount;
+
+    private Double monthlyOrderValue;
+}
