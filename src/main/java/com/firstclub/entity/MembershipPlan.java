@@ -20,7 +20,7 @@ public class MembershipPlan {
 
     private Double price;
 
-     private Integer durationInDays;
+    private Integer durationInDays;
 
     private Integer validityDays;
 
