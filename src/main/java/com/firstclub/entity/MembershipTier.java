@@ -17,13 +17,26 @@ public class MembershipTier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Entity
+@Table(name = "membership_tier")
+public class MembershipTier {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tierName;
+    private String tierName; // Silver, Gold, Platinum
 
-    private Double discountPercent;
+    private Integer minOrders;
+
+    private BigDecimal minOrderValue;
+
+    private String cohort;
+
+    private Integer discountPercentage;
 
     private Boolean freeDelivery;
 
     private Boolean prioritySupport;
+}
 }
