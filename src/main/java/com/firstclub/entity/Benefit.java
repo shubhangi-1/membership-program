@@ -12,22 +12,44 @@ import lombok.*;
 @Builder
 public class Benefit {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private boolean freeDelivery;
+    private double extraDiscountPercent;
+    private boolean prioritySupport;
+    private boolean exclusiveCoupons;
 
-    private String benefitName;
+    public Benefit(boolean freeDelivery,
+                   double extraDiscountPercent,
+                   boolean prioritySupport,
+                   boolean exclusiveCoupons) {
+        this.freeDelivery = freeDelivery;
+        this.extraDiscountPercent = extraDiscountPercent;
+        this.prioritySupport = prioritySupport;
+        this.exclusiveCoupons = exclusiveCoupons;
+    }
 
-    @Enumerated(EnumType.STRING)
-    private BenefitType benefitType;
+    public boolean isFreeDelivery() {
+        return freeDelivery;
+    }
 
-    /*
-      Example:
-      10 = 10% discount
-      0 = Free Delivery
-      20 = Coupon Value
-    */
-    private Double value;
+    public double getExtraDiscountPercent() {
+        return extraDiscountPercent;
+    }
 
-    private String description;
+    public boolean isPrioritySupport() {
+        return prioritySupport;
+    }
+
+    public boolean isExclusiveCoupons() {
+        return exclusiveCoupons;
+    }
+
+    @Override
+    public String toString() {
+        return "Benefit{" +
+                "freeDelivery=" + freeDelivery +
+                ", extraDiscountPercent=" + extraDiscountPercent +
+                ", prioritySupport=" + prioritySupport +
+                ", exclusiveCoupons=" + exclusiveCoupons +
+                '}';
+    }
 }
