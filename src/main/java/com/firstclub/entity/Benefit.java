@@ -17,16 +17,6 @@ public class Benefit {
     private boolean prioritySupport;
     private boolean exclusiveCoupons;
 
-    public Benefit(boolean freeDelivery,
-                   double extraDiscountPercent,
-                   boolean prioritySupport,
-                   boolean exclusiveCoupons) {
-        this.freeDelivery = freeDelivery;
-        this.extraDiscountPercent = extraDiscountPercent;
-        this.prioritySupport = prioritySupport;
-        this.exclusiveCoupons = exclusiveCoupons;
-    }
-
     public boolean isFreeDelivery() {
         return freeDelivery;
     }
