@@ -33,4 +33,7 @@ public class MembershipTier {
 
     private Boolean prioritySupport;
 
+    @OneToMany(mappedBy = "tier")
+    private List<Benefit> benefits;
+
 }
