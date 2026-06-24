@@ -12,34 +12,18 @@ import lombok.*;
 @Builder
 public class Benefit {
 
-    private boolean freeDelivery;
-    private double extraDiscountPercent;
-    private boolean prioritySupport;
-    private boolean exclusiveCoupons;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public boolean isFreeDelivery() {
-        return freeDelivery;
-    }
+    private String benefitKey;
 
-    public double getExtraDiscountPercent() {
-        return extraDiscountPercent;
-    }
+    private String benefitValue;
 
-    public boolean isPrioritySupport() {
-        return prioritySupport;
-    }
+    @ManyToOne
+    @JoinColumn(name = "tier_id")
+    private MembershipTier tier;
 
-    public boolean isExclusiveCoupons() {
-        return exclusiveCoupons;
-    }
+    // getters setters
 
-    @Override
-    public String toString() {
-        return "Benefit{" +
-                "freeDelivery=" + freeDelivery +
-                ", extraDiscountPercent=" + extraDiscountPercent +
-                ", prioritySupport=" + prioritySupport +
-                ", exclusiveCoupons=" + exclusiveCoupons +
-                '}';
-    }
 }
