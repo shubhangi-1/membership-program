@@ -16,13 +16,10 @@ public class MembershipPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name; // Monthly, Quarterly, Yearly
+    private String name;
 
-    private Double price;
-
-    private Integer durationInDays;
-
-    private Integer validityDays;
+    @Enumerated(EnumType.STRING)
+    private BillingCycle billingCycle;
 
     private BigDecimal price;
 
