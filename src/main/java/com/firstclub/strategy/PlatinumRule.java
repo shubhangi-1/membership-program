@@ -1,1 +1,0 @@
-package com.firstclub.strategy; public class PlatinumRule {}
