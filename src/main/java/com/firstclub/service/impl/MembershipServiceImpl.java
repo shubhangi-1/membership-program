@@ -44,10 +44,14 @@ public class MembershipServiceImpl
                     "User already has an active membership");
         }
 
-        User user = userRepository.findById(
-                request.getUserId())
-                .orElseThrow(() ->
-                        new RuntimeException("User not found"));
+        User user = userRepository
+        .findByIdForUpdate(request.getUserId())
+        .orElseThrow(() -> new RuntimeException("User not found"));
+            
+        // User user = userRepository.findById(
+        //         request.getUserId())
+        //         .orElseThrow(() ->
+        //                 new RuntimeException("User not found"));
 
         MembershipPlan plan = planRepository
                 .findById(request.getPlanId())
