@@ -12,6 +12,14 @@ import java.util.List;
 public interface UserMembershipRepository
         extends JpaRepository<UserMembership, Long> {
 
+   @Lock(LockModeType.PESSIMISTIC_WRITE)
+   @Query("""
+                SELECT m
+                FROM UserMembership m
+                WHERE m.id = :id
+        """)
+        Optional<UserMembership> findByIdForUpdate(Long id);
+
     Optional<UserMembership> findByUserIdAndStatus(
             Long userId,
             MembershipStatus status);
